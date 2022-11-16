@@ -7,11 +7,16 @@ public class Reina {
 	public Color getColor() {
 		return color;
 	}
-public Reina() {
-	setColor(Color.BLANCO);
-}
+
+	public Reina() {
+		setColor(Color.BLANCO);
+	}
+
+	public Reina(Color color) {
+		setColor(color);
+		}
 	private void setColor(Color color) {
-		if(color==null) {
+		if (color == null) {
 			throw new NullPointerException("ERROR: El color no puede ser nulo.");
 		}
 		if (color == Color.BLANCO) {
@@ -33,5 +38,9 @@ public Reina() {
 		}
 		this.posicion = posicion;
 	}
-
+	
+	@Override
+	public String toString() {
+		return "color=" + color + ", posicion=(" + posicion + ")";
+	}
 }

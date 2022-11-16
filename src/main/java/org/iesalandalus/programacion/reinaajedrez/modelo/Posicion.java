@@ -8,6 +8,13 @@ public class Posicion {
 		setFila(fila);
 		setColumna(columna);
 	}
+	public Posicion(Posicion posicion) {
+		if(posicion==null) {
+			throw new NullPointerException("La posición copiada debería ser la misma que la pasada como parámetro.");
+		}
+		setFila(posicion.fila);
+		setColumna(posicion.columna);
+	}
 	public int getFila() {
 		return fila;
 	}

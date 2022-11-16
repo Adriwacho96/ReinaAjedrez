@@ -7,7 +7,9 @@ public class Reina {
 	public Color getColor() {
 		return color;
 	}
-
+public Reina() {
+	setColor(Color.BLANCO);
+}
 	private void setColor(Color color) {
 		if(color==null) {
 			throw new NullPointerException("ERROR: El color no puede ser nulo.");

@@ -10,13 +10,15 @@ public class Posicion {
 		setFila(fila);
 		setColumna(columna);
 	}
+
 	public Posicion(Posicion posicion) {
-		if(posicion==null) {
-			throw new NullPointerException("La posición copiada debería ser la misma que la pasada como parámetro.");
+		if (posicion == null) {
+			throw new NullPointerException("ERROR: No es posible copiar una posición nula.");
 		}
 		setFila(posicion.fila);
 		setColumna(posicion.columna);
 	}
+
 	public int getFila() {
 		return fila;
 	}
@@ -38,10 +40,12 @@ public class Posicion {
 		}
 		this.columna = columna;
 	}
+
 	@Override
 	public int hashCode() {
 		return Objects.hash(columna, fila);
 	}
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -52,6 +56,13 @@ public class Posicion {
 			return false;
 		Posicion other = (Posicion) obj;
 		return columna == other.columna && fila == other.fila;
+
 	}
 
-}
+	@Override
+	public String toString() {
+		return String.format("fila=%s, columna=%s", fila, columna);
+		
+
+		}
+	}

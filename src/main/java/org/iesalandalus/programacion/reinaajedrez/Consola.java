@@ -9,7 +9,7 @@ public class Consola {
 
 	}
 
-	public void mostraMenu() {
+	public static void mostrarMenu() {
 		System.out.println("Opcion 1. Selecciona reina blanca");
 		System.out.println("Opcion 2. Elige el color de la reina");
 		System.out.println("Opcion 3. Mover");
@@ -19,27 +19,27 @@ public class Consola {
 	public static int eligeOpcionMenu() {
 		int op;
 		do {
-			System.out.println("Elige una opcion correcta");
+			
 			op = Entrada.entero();
 		} while (op < 1 || op > 4);
-
+		
 		switch (op) {
-		case 1: 
+		case 1:
 			System.out.println("Has elegido reina blanca");
 			break;
-		
-		case 2: 
+
+		case 2:
 			System.out.println("Elige el color de la reina");
 			break;
-		
-		case 3: 
+
+		case 3:
 			System.out.println("Mueve la pieza");
 			break;
-		
-		case 4: 
+
+		case 4:
 			System.out.println("Adiooooooos");
 			break;
-		
+
 		}
 		return op;
 
@@ -49,63 +49,88 @@ public class Consola {
 		Color color = null;
 		int opColor;
 		do {
-			System.out.println("Elige una opcion correcta");
+			
 			opColor = Entrada.entero();
 		} while (opColor < 1 || opColor > 2);
 		switch (opColor) {
-		case 1: 
-			System.out.println("Has elegido reina blanca");
-			color=Color.BLANCO;
-			break;
-		
-		case 2: 
-			System.out.println("Has elegido reina negra" );
-			color=Color.NEGRO;
+		case 1:
 			
+			color = Color.BLANCO;
+			break;
+
+		case 2:
+		
+			color = Color.NEGRO;
+			break;
+
 		}
 		return color;
 	}
-	public static void MenuDirecciones() {
+
+	public static void mostrarMenuDirecciones() {
+		System.out.println("1. Para mover al norte");
+		System.out.println("2. Para mover al noreste");
+		System.out.println("3. Para mover al este");
+		System.out.println("4. Para mover al sureste");
+		System.out.println("5. Para mover al sur");
+		System.out.println("6. Para mover al suroeste");
+		System.out.println("7. Para mover al oeste");
+		System.out.println("8. Para mover al noroeste");
+	}
+
+	public static Direccion elegirDirecciones() {
+		Direccion position = null;
 		int direccion;
-		Direccion position=null;
 		do {
 			System.out.println("Elige una direccion correcta: ");
-			direccion=Entrada.entero();
-		} while(direccion <1 || direccion >8);
-		switch(direccion) {
+			direccion = Entrada.entero();
+		} while (direccion < 1 || direccion > 8);
+		switch (direccion) {
 		case 1:
 			System.out.println("Has elegido norte");
-			position=Direccion.NORTE;
+			position = Direccion.NORTE;
 			break;
 		case 2:
 			System.out.println("Has elegido noreste");
-			position=Direccion.NORESTE;
+			position = Direccion.NORESTE;
 			break;
 		case 3:
 			System.out.println("Has elegido este");
-			position=Direccion.ESTE;
+			position = Direccion.ESTE;
 			break;
 		case 4:
 			System.out.println("Has elegido sureste");
-			position=Direccion.SURESTE;
+			position = Direccion.SURESTE;
 			break;
 		case 5:
 			System.out.println("Has elegido sur");
-			position=Direccion.SUR;
+			position = Direccion.SUR;
 			break;
 		case 6:
 			System.out.println("Has elegido suroeste");
-			position=Direccion.SUROESTE;
+			position = Direccion.SUROESTE;
 			break;
 		case 7:
 			System.out.println("Has elegido oeste");
-			position=Direccion.OESTE;
+			position = Direccion.OESTE;
 			break;
 		case 8:
 			System.out.println("Has elegido noroeste");
-			position=Direccion.NOROESTE;
+			position = Direccion.NOROESTE;
 			break;
 		}
-		
+		return position;
 	}
+		public static int elegirPasos() {
+			int pasos;
+			do {
+				System.out.println("Introduce unos pasos");
+				pasos=Entrada.entero();
+			} while(pasos <1 || pasos >7);
+			
+			return pasos;
+		}
+		public static void despedirse() {
+			System.out.println("Adios, muy buenas!!");
+		}
 }
